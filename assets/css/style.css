@@ -16,15 +16,14 @@
 }
 
 #Lapp{
-    border: 1px solid blue;
     height: 95vh;
     background-color: rgb(160, 160, 160);
 }
 
 #Rapp{
-    border: 1px solid rgb(0, 255, 42);
     height: 95vh;
     background-color: rgb(160, 160, 160);
+    padding: 0 0;
 }
 
 .userAvatar{
@@ -35,8 +34,10 @@
     padding: 0;
 }
 
-#Lheader{
+#Lheader,
+#Rheader{
     background-color: #e6e6e6;
+    height: 8%;
 }
 
 #alertNotifiche{
@@ -69,16 +70,50 @@
     background-color: #FAFAFA
 }
 
+#TabUtenti{
+    height: 100%;
+}
+
 .fa-solid.fa-magnifying-glass.position-absolute{
     left: 23px;
     top: 14px;
 }
 
 .smallGreyText{
-    color: #C0C5C5;
+    color: #a1a1a1;
     font-size: 10px;
 }
 
-.CardUtente{
+.CardUtente,
+#Lapp{
     background-color: white;
+}
+
+
+#chatBody{
+    background-image: url(/assets/img/mine.jpg);
+    height: 84%;
+}
+
+#chatSend{
+    height: 8%;
+    background-color: grey;
+}
+
+.orarioUtente{
+    right: 5px;
+    bottom: 2px;
+}
+
+.msgUser{
+    background-color: #d2f5b9;
+}
+
+.msgOther{
+    background-color: white;
+}
+
+.msgOther,
+.msgUser{
+    padding-right: 6rem;
 }

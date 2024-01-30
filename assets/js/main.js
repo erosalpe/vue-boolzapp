@@ -166,6 +166,7 @@ createApp({
             ],
             }
             ],
+            contatto: 0,
 
     }
   },
@@ -179,7 +180,12 @@ createApp({
         let data = this.contacts[index].messages[arrLength - 1].date
         data = data.split(" ").pop();
         return data = data.substr(0, data.lastIndexOf(":"));
-    }
+    },
+    onlyHdate(index,contatto){
+        let data = this.contacts[contatto].messages[index].date
+        data = data.split(" ").pop();
+        return data = data.substr(0, data.lastIndexOf(":"));
+    },
     
   },
 }).mount('#app')
