@@ -97,7 +97,8 @@
 
 #chatSend{
     height: 8%;
-    background-color: grey;
+    background-color: #f0ebe6;
+    width: 100%;
 }
 
 .orarioUtente{
@@ -117,3 +118,20 @@
 .msgUser{
     padding-right: 6rem;
 }
+
+#textBarBox{
+    width: 100%;
+}
+
+#textBarBox > input{
+    width: 90%;
+    justify-self: center;
+}
+
+
+#textarea::placeholder {
+    position: absolute;
+    top: 45%;
+    left: 13%;
+    transform: translate(-50%, -50%);
+  }

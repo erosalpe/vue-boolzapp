@@ -102,6 +102,7 @@
                             </div>
                         </div>
 
+                        <!--Corpo chat-->
                         <div id="chatBody" class="d-flex flex-column px-5 pt-5 gap-2">
 
                             <div class="msgOther align-self-start ps-2 rounded py-2 position-relative" v-for="msg,index in contacts[contatto].messages">
@@ -111,14 +112,20 @@
 
                             <div class="msgUser align-self-end ps-2 rounded py-2 position-relative">
                                 <span>Messaggio test</span>
-                                <span class="orarioUtente position-absolute smallGreyText">12:00</span>
+                                <span class="orarioUtente position-absolute smallGreyText">{{oraAttuale()}}</span>
                             </div>
-
                         </div>
 
-                        <div id="chatSend">
-                            <div>
-                                a
+                        <!--Barra invio messaggio-->
+                        <div id="chatSend" class="d-flex align-items-center px-5 justify-content-between">
+                            <div id="emoji">
+                                <i class="fa-regular fa-face-smile" style="color: #afafaf;"></i>
+                            </div>
+                            <div id="textBarBox" class="d-flex justify-content-center">
+                                <input type="text" name="chatBar" id="textarea" placeholder="Scrivi un messaggio" class="ps-2 border rounded pt-2">
+                            </div>
+                            <div id="iconMic">
+                                <i class="fa-solid fa-microphone" style="color: #afafaf;"></i>
                             </div>
                         </div>
                         

@@ -186,6 +186,13 @@ createApp({
         data = data.split(" ").pop();
         return data = data.substr(0, data.lastIndexOf(":"));
     },
+    oraAttuale(){
+        const currentDate = new Date();
+        const hours = String(currentDate.getHours()).padStart(2, "0");
+        const minutes = String(currentDate.getMinutes()).padStart(2, "0");
+        const orario = `${hours}`+":" +`${minutes}`
+        return orario;
+    },
     
   },
 }).mount('#app')
