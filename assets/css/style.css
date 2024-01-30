@@ -1,0 +1,65 @@
+#app{
+    height: 100vh;
+}
+
+#backgroundApp{
+    height: 100%;
+    background: rgb(0,150,135);
+    background: linear-gradient(180deg, rgba(0,150,135,1) 15%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 100%);
+    z-index: -1;
+}
+
+#webApp{
+    height: 95vh;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+#Lapp{
+    border: 1px solid blue;
+    height: 95vh;
+    background-color: rgb(160, 160, 160);
+}
+
+#Rapp{
+    border: 1px solid rgb(0, 255, 42);
+    height: 95vh;
+    background-color: rgb(160, 160, 160);
+}
+
+.userAvatar{
+    width: 10%;
+}
+
+.row>.d-flex{
+    padding: 0;
+}
+
+#Lheader{
+    background-color: #e6e6e6;
+}
+
+#alertNotifiche{
+    background-color: #8cd7fa;
+}
+
+.CapFontSizeBold{
+    text-transform: capitalize;
+}
+
+.CapFontSizeBold,
+.FontSizeBold{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#attivaNotifiche > a{
+    color: #687382;
+    font-size: 12px;
+}
+
+.fa-solid.fa-bell-slash{
+    background-color: white;
+    width: 2.5rem;
+    aspect-ratio: 1;
+}
