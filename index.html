@@ -24,7 +24,7 @@
                         <div id="Lheader" class="d-flex justify-content-between align-items-center p-2">
 
                             <!--Info utente-->
-                            <div id="userInfo" class="d-flex align-items-center gap-2">
+                            <div id="userInfo" class="d-flex align-items-center CapFontSizeBold gap-2">
                                 <img src="./assets/img/avatar_1.jpg" alt="avatar" class="rounded-circle userAvatar" >
                                 <span>Nome</span>
                             </div>
@@ -60,6 +60,27 @@
 
 
                         <!--Tabs utenti-->
+                        <div id="TabUtenti" class="overflow-auto">
+
+                            <!--Card Utente-->
+                            <div class="CardUtente p-2 border-bottom" v-for="contact,index in contacts">
+                                <div class="d-flex">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img :src="contact.avatar" alt="avatar" class="rounded-circle userAvatar" >
+                                        <div class="d-flex flex-column">
+                                            <span class="CapFontSizeBold">{{contact.name}}</span>
+                                            <span class="smallGreyText">{{lastMessage(index)}}</span>
+                                        </div>
+                                    </div>
+                                    <span class="ultimoAccessoCard smallGreyText">{{lastSeen(index)}}</span>
+                                </div>
+                            </div>
+
+                            
+
+                            
+                        </div>
+                        
                         
 
 

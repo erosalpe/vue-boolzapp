@@ -73,3 +73,12 @@
     left: 23px;
     top: 14px;
 }
+
+.smallGreyText{
+    color: #C0C5C5;
+    font-size: 10px;
+}
+
+.CardUtente{
+    background-color: white;
+}
