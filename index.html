@@ -14,7 +14,7 @@
         <div id="backgroundApp" class="py-4">
 
             <!--Web App container-->
-            <div id="webApp" class="container-fluid">
+            <div id="webApp" class="container-fluid shadowCustom">
                 <div class="row d-flex">
 
                     <!--Lato sinistro-->
@@ -55,7 +55,7 @@
                         <!--Search Bar-->
                         <div id="SearchBarUtenti" class="position-relative p-2">
                             <i class="fa-solid fa-magnifying-glass position-absolute" style="color: #afafaf;"></i>
-                            <input type="search" name="CercaUtenti" placeholder="Cerca o inizia una nuova chat" class="ps-5 w-100 border rounded">
+                            <input type="search" name="CercaUtenti" placeholder="Cerca o inizia una nuova chat" class="ps-5 w-100 border rounded" v-model="ricercaNome">
                         </div>
 
 
@@ -63,7 +63,10 @@
                         <div id="TabUtenti" class="overflow-y-scroll">
 
                             <!--Card Utente-->
-                            <div class="CardUtente p-2 border-bottom" v-for="contact,index in contacts" @click="contatto = index">
+                            <div class="CardUtente p-2 border-bottom" 
+                            v-for="contact,index in contacts" @click="contatto = index" 
+                            :class="{'d-none' : (ricercaUtente(index,ricercaNome) === false)}"
+                            >
                                 <div class="d-flex">
                                     <div class="d-flex align-items-center gap-2">
                                         <img :src="contact.avatar" alt="avatar" class="rounded-circle userAvatar" >

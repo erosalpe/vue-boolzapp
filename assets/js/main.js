@@ -168,6 +168,7 @@ createApp({
             ],
             contatto: 0,
             testoMessaggio: "",
+            ricercaNome: "",
 
     }
   },
@@ -234,6 +235,17 @@ createApp({
         console.log(this.contacts[contatto].messages)
       }
     },
+    ricercaUtente(index,ricercaNome){
+      const arrayNomiCheck = []
+      const nomeLow = (this.contacts[index].name.toLowerCase())
+      const nomeUpp = (this.contacts[index].name.toUpperCase())
+      arrayNomiCheck.push(nomeLow, nomeUpp)
+      const lowName = arrayNomiCheck.filter(str => str.includes(ricercaNome))
+      console.log(lowName)
+      if(this.contacts[index].name.includes(lowName)){
+        return false
+      }
+    }
     
   },
 }).mount('#app')
