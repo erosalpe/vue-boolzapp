@@ -60,7 +60,7 @@
 
 
                         <!--Tabs utenti-->
-                        <div id="TabUtenti" class="overflow-auto">
+                        <div id="TabUtenti" class="overflow-y-scroll">
 
                             <!--Card Utente-->
                             <div class="CardUtente p-2 border-bottom" v-for="contact,index in contacts" @click="contatto = index">
@@ -103,15 +103,15 @@
                         </div>
 
                         <!--Corpo chat-->
-                        <div id="chatBody" class="pt-4">
+                        <div id="chatBody" class="pt-4 overflow-y-scroll">
 
                             <div v-for="msg,index in contacts[contatto].messages" class="d-flex flex-column px-5 pt-2">
-                                <div class="msgOther align-self-start ps-2 rounded py-2 position-relative" v-if="statusCheck(index,contatto) === true">
+                                <div class="msgOther align-self-start ps-2 rounded py-2 position-relative shadowCustom" v-if="statusCheck(index,contatto) === true">
                                     <span>{{msg.message}}</span>
                                     <span class="orarioUtente position-absolute smallGreyText">{{onlyHdate(index,contatto)}}</span>
                                 </div>
     
-                                <div class="msgUser align-self-end ps-2 rounded py-2 position-relative" v-else>
+                                <div class="msgUser align-self-end ps-2 rounded py-2 position-relative shadowCustom" v-else>
                                     <span>{{msg.message}}</span>
                                     <span class="orarioUtente position-absolute smallGreyText">{{onlyHdate(index,contatto)}}</span>
                                 </div>
