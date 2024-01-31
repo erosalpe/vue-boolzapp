@@ -103,17 +103,20 @@
                         </div>
 
                         <!--Corpo chat-->
-                        <div id="chatBody" class="d-flex flex-column px-5 pt-5 gap-2">
+                        <div id="chatBody" class="pt-4">
 
-                            <div class="msgOther align-self-start ps-2 rounded py-2 position-relative" v-for="msg,index in contacts[contatto].messages">
-                                <span>{{msg.message}}</span>
-                                <span class="orarioUtente position-absolute smallGreyText">{{onlyHdate(index,contatto)}}</span>
+                            <div v-for="msg,index in contacts[contatto].messages" class="d-flex flex-column px-5 pt-2">
+                                <div class="msgOther align-self-start ps-2 rounded py-2 position-relative" v-if="statusCheck(index,contatto) === true">
+                                    <span>{{msg.message}}</span>
+                                    <span class="orarioUtente position-absolute smallGreyText">{{onlyHdate(index,contatto)}}</span>
+                                </div>
+    
+                                <div class="msgUser align-self-end ps-2 rounded py-2 position-relative" v-else>
+                                    <span>{{msg.message}}</span>
+                                    <span class="orarioUtente position-absolute smallGreyText">{{onlyHdate(index,contatto)}}</span>
+                                </div>
                             </div>
-
-                            <div class="msgUser align-self-end ps-2 rounded py-2 position-relative">
-                                <span>Messaggio test</span>
-                                <span class="orarioUtente position-absolute smallGreyText">{{oraAttuale()}}</span>
-                            </div>
+                            
                         </div>
 
                         <!--Barra invio messaggio-->
@@ -122,7 +125,7 @@
                                 <i class="fa-regular fa-face-smile" style="color: #afafaf;"></i>
                             </div>
                             <div id="textBarBox" class="d-flex justify-content-center">
-                                <input type="text" name="chatBar" id="textarea" placeholder="Scrivi un messaggio" class="ps-2 border rounded pt-2">
+                                <input type="text" name="chatBar" id="textarea" placeholder="Scrivi un messaggio" class="ps-2 border rounded pt-2" v-model="testoMessaggio" v-on:keyup.enter="inviaMessaggio(contatto,testoMessaggio); replyMsg(contatto)">
                             </div>
                             <div id="iconMic">
                                 <i class="fa-solid fa-microphone" style="color: #afafaf;"></i>

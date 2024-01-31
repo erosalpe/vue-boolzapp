@@ -167,6 +167,7 @@ createApp({
             }
             ],
             contatto: 0,
+            testoMessaggio: "",
 
     }
   },
@@ -192,6 +193,43 @@ createApp({
         const minutes = String(currentDate.getMinutes()).padStart(2, "0");
         const orario = `${hours}`+":" +`${minutes}`
         return orario;
+    },
+    statusCheck(index,contatto){
+      if(this.contacts[contatto].messages[index].status === 'received'){
+        return true
+      } else {
+        return false
+      }
+    },
+    replyMsg(contatto){
+        const currentDate = new Date();
+        let anno = currentDate.getFullYear();
+        let mese = currentDate.getMonth() + 1;
+        let giorno = currentDate.getDay();
+        const hours = String(currentDate.getHours()).padStart(2, "0");
+        const minutes = String(currentDate.getMinutes()).padStart(2, "0");
+        const mills = String(currentDate.getMilliseconds()).padStart(2, "0");
+        const orario = `${hours}`+":"+`${minutes}`+":"+`${mills}`
+        let GMA = `${giorno}`+"/"+`${mese}`+"/"+`${anno}`;
+        const dataCompleta = `${GMA}`+" "+`${orario}`;
+        this.contacts[contatto].messages.push({date: `${dataCompleta}`, message: "Ok!", status: 'received'})
+    },
+    inviaMessaggio(contatto,testoMessaggio){
+      if(testoMessaggio !== ""){
+        const currentDate = new Date();
+        let anno = currentDate.getFullYear();
+        let mese = currentDate.getMonth() + 1;
+        let giorno = currentDate.getDay();
+        const hours = String(currentDate.getHours()).padStart(2, "0");
+        const minutes = String(currentDate.getMinutes()).padStart(2, "0");
+        const mills = String(currentDate.getMilliseconds()).padStart(2, "0");
+        const orario = `${hours}`+":"+`${minutes}`+":"+`${mills}`
+        let GMA = `${giorno}`+"/"+`${mese}`+"/"+`${anno}`;
+        const dataCompleta = `${GMA}`+" "+`${orario}`;
+        this.contacts[contatto].messages.push({date: `${dataCompleta}`, message: `${testoMessaggio}`, status: 'sent'})
+        this.testoMessaggio = ""
+        console.log(this.contacts[contatto].messages)
+      }
     },
     
   },
