@@ -202,6 +202,7 @@ createApp({
       }
     },
     replyMsg(contatto){
+      setTimeout(() => { 
         const currentDate = new Date();
         let anno = currentDate.getFullYear();
         let mese = currentDate.getMonth() + 1;
@@ -213,6 +214,8 @@ createApp({
         let GMA = `${giorno}`+"/"+`${mese}`+"/"+`${anno}`;
         const dataCompleta = `${GMA}`+" "+`${orario}`;
         this.contacts[contatto].messages.push({date: `${dataCompleta}`, message: "Ok!", status: 'received'})
+        }, 1000);
+        
     },
     inviaMessaggio(contatto,testoMessaggio){
       if(testoMessaggio !== ""){
